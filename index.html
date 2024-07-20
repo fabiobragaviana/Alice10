@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Caça aos Presentes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
+        body {
+            font-family: Pangolin;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            background-attachment: fixed;
+            -position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1 {
+            font-size: 80px;
+            color: #ff0062;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px #ffffff;
+            background-color: #ffffff4d;
+            width: auto;
+            height: 100%;
+            border-radius: 20px;
+            border: 5px solid #ffffff;
+            border-style: double;
+
+            
+        }
+        p{
+            font-size: 22px;
+            color: #ff0062;
+            margin-top: 1px;
+            text-shadow: 1px 1px 2px #ffffff;
+            background-color: #ffffff34;
+            width: auto;
+            height: 100%;
+            border-radius: 20px;
+            border: 5px solid #ffffff;
+
+            border-style: double;
+
+            
+        }
+        
+        
+        #mapa {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            border: 5px solid #ffffff;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            
+        }
+        .local {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            border: 1px solid #000;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .local:hover {
+            background-color: #ffffff4d;
+        }
+        #pergunta {
+            font-size: 22px;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px #ffffff;
+            color: #ff0062;
+            font-weight: bold;
+        }
+        #mensagem {
+            color: #ff0077;
+            font-size: 40px;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px #000;
+            
+        }
+        .parallax::before {
+            content: "center";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('imagens/fundo.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: -2;
+            
+        }
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+        
+        body {
+            background-image: url(imagens/vestido\ rosa\ fundo.jpg);
+            background-position: center center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff69b4;
+            color: #fff;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        .presente {
+            display: none;
+            max-width: 100%;
+            margin: 20px auto;
+            opacity: 2;
+            text-align: center center;
+            transition: transform 0.3s ease-in-out;
+            border: 5px solid #ffffff;
+            border-radius: 15px;
+            
+        }
+        .presente:hover{
+            transform: scale(1.2);
+        }
+        .video-container{
+            background-color: #ffffff34;
+            border: 5px solid #ffffff;
+            height: 100%;
+            width: auto;
+            border-radius: 15px ;
+            text-align: center;
+
+        }
+
+
+    
+        
+    </style>
+</head>
+<body>
+    <h1>Feliz Aniversario Alice<br>10 Anos</h1>
+    <p>Hoje você completa 10 anos, e eu mal posso acreditar como o tempo passou tão rápido. Parece que foi ontem que você chegou ao mundo, trazendo consigo uma luz que iluminou nossas vidas de uma maneira que nunca poderíamos ter imaginado. <br>
+
+        Cada dia ao seu lado é uma nova aventura cheia de risos, aprendizados e momentos preciosos. Você tem um coração tão bondoso, uma mente curiosa e uma alegria contagiante que enche todos ao seu redor de felicidade. <br>
+        
+        Neste seu dia especial, quero que saiba o quanto você é amada. Estou tão orgulhoso(a) da pessoa incrível que você está se tornando. Continue sendo essa menina maravilhosa, curiosa e carinhosa. Você tem um futuro brilhante pela frente, e eu estarei ao seu lado em cada passo do caminho, torcendo por você e te apoiando em tudo. <br>
+        
+        Que seu aniversário seja repleto de sorrisos, surpresas e muita diversão. Que você continue sonhando grande e alcançando tudo o que seu coração deseja. <br>
+        
+        Feliz 10 anos, minha princesinha! Que este seja apenas o começo de muitos anos de felicidade e realizações. <br>
+        
+        Com todo amor de sua Familia, Papai, Mamãe e sua Irmã.</p>
+
+    <div id="mapa">
+        <div id="pergunta">Clique no primeiro local para começar!</div>
+        <input type="text" id="resposta" placeholder="Digite sua resposta aqui">
+        <button onclick="verificarResposta()">Enviar Resposta</button>
+    </div>
+    <div id="mensagem"></div>
+    <img id="presente1" class="presente" src="imagens/branca de neve.jpg" alt="Presente 1">
+    <img id="presente2" class="presente" src="imagens/lady1.jpg" alt="Presente 2">
+    <img id="presente3" class="presente" src="imagens/porto.jpg" alt="Presente 3">
+    <img id="presente4" class="presente" src="imagens/benedita.jpg" alt="Presente 4">
+    <img id="presente5" class="presente" src="imagens/frozen.jpeg" alt="Presente 5">
+    <img id="presente6" class="presente" src= "imagens/fortaleza.jpg" alt="Presente 6">
+    <img id="presente7" class="presente" src= "imagens/coffee.jpg" alt="Presente 7">
+    <img id="presente8" class="presente" src= "imagens/familia.jpg" alt="Presente 8">
+    
+
+    <script>
+        const perguntas = [
+            "Qual o tema do seu aniversário de 5 anos?",
+            "Qual era sua personagem preferida aos 2 anos de idade?",
+            "Qual mês e ano nos mudamos para Portugal?",
+            "Quem é o seu melhor amigo(a)?",
+            "Qual o filme de uma pricesa gelada que você ama?",
+            "Em que cidade você nasceu?",
+            "Qual o nome do seu animal de estimação?",
+            "Para finalizar digite a palavra AMOR",
+            
+            
+        ];
+
+        const respostas = [
+            "branca de neve",
+            "ladybug",
+            "fevereiro de 2022",
+            "benedita",
+            "frozen",
+            "fortaleza",
+            "coffee",
+            "amor",
+            
+        
+        ];
+
+        const mensagens = [
+            "Parabéns Alice! Você acertou o tema do seu aniversário de 5 anos!",
+            "Muito bem! seu Proximo presente está dentro de um item que você leva para a escola.",
+            "Ótimo! vais encontrar algo que gosta aqui mesmo na sala",
+            "Isso mesmo! vá até o quarto da Gabriella e procure um presente!",
+            "Perfeito! tem algo que você vai amar no seu querto, mas procure com calma!",
+            "Correto! procure algo no quarto de seus pais!",
+            "Isso mesmo, agora temos algo que vai amar e só mais uma questão...",
+            "Desejamos um Feliz aniversario e que Deus te abençoe abudantemente, nunca esqeça de agradecer por tudo qe nos é proporcionado, que nossa familia permaneça unida no amor de Deus! espero que tenha Gostado da brincadeira. NÓS TE AMAMOS" ,
+            
+            ];
+
+let indiceAtual = 0;
+let imagemAnterior = null;
+
+function verificarResposta() {
+    const respostaUsuario = document.getElementById('resposta').value.trim().toLowerCase();
+    if (respostaUsuario === respostas[indiceAtual]) {
+        document.getElementById('mensagem').innerText = mensagens[indiceAtual];
+        if (imagemAnterior !== null) {
+            document.getElementById(`presente${imagemAnterior + 1}`).style.display = 'none';
+        }
+        document.getElementById(`presente${indiceAtual + 1}`).style.display = 'block';
+        imagemAnterior = indiceAtual;
+        indiceAtual++;
+        document.getElementById('resposta').value = '';
+        if (indiceAtual < perguntas.length) {
+            document.getElementById('pergunta').innerText = perguntas[indiceAtual];
+        } else {
+            document.getElementById('pergunta').innerText = "Parabéns! Você encontrou todos os presentes!";
+        }
+    } else {
+        document.getElementById('mensagem').innerText = "Tente novamente!";
+    }
+}
+
+
+
+document.getElementById('pergunta').innerText = perguntas[indiceAtual];
+</script>
+    <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/OfnBBS7vFss?si=eZwefF_nBiXQbe0B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+        
+    </div>
+</body>
+</html>
