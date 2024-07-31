@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Alice 10 Anos</title>
+    <title>Caça aos Presentes</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
 
@@ -146,32 +146,23 @@
         .presente:hover{
             transform: scale(1.2);
         }
-       
-        .video-container {
+        .video-container{
             background-color: #ffffff34;
-            border: 5px solid #ffffff;        
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 ratio */
-            padding-top: 25px;
-            height: 0;
-            overflow: hidden;
+            border: 5px solid #ffffff;
+            height: 100%;
+            width: auto;
+            border-radius: 15px ;
+            text-align: center;
+
         }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
 
     
         
     </style>
 </head>
 <body>
-    <h1>Feliz Aniversário Alice<br> Parabéns por seus 10 Anos</h1>
+    <h1>Feliz Aniversario Alice<br>10 Anos</h1>
     <p>Hoje você completa 10 anos, e eu mal posso acreditar como o tempo passou tão rápido. Parece que foi ontem que você chegou ao mundo, trazendo consigo uma luz que iluminou nossas vidas de uma maneira que nunca poderíamos ter imaginado. <br>
 
         Cada dia ao seu lado é uma nova aventura cheia de risos, aprendizados e momentos preciosos. Você tem um coração tão bondoso, uma mente curiosa e uma alegria contagiante que enche todos ao seu redor de felicidade. <br>
@@ -197,19 +188,26 @@
     <img id="presente5" class="presente" src="imagens/frozen.jpeg" alt="Presente 5">
     <img id="presente6" class="presente" src= "imagens/fortaleza.jpg" alt="Presente 6">
     <img id="presente7" class="presente" src= "imagens/coffee.jpg" alt="Presente 7">
-    <img id="presente8" class="presente" src= "imagens/familia.jpg" alt="Presente 8">
+    <img id="presente8" class="presente" src= "imagens/arlequina.jpg" alt="Presente 8">
+    <img id="presente9" class="presente" src= "imagens/pedegalinha.jpg" alt="presente 9">
+    <img id="presente10" class="presente" src= "imagens/lingua.jpg" alt="presente 10">
+    <img id="presente11" class="presente" src= "imagens/familia.jpg" alt="Presente 11">
+
     
 
     <script>
         const perguntas = [
             "Qual o tema do seu aniversário de 5 anos?",
             "Qual era sua personagem preferida aos 2 anos de idade?",
-            "Qual mês e ano nos mudamos para Portugal?",
+            "Qual mês e ano nos mudamos para Portugal ( digite o mês por extenso e o ano numérico)?",
             "Quem é o seu melhor amigo(a)?",
-            "Qual o nome filme de uma princesa gelada que você ama?",
+            "Qual o filme de uma pricesa gelada que você ama?",
             "Em que cidade você nasceu?",
             "Qual o nome do seu animal de estimação?",
-            "Para finalizar digite a palavra amor",
+            "Qual foi sua fantasia no ultimo halloween ",
+            "Qual parde do frango você mais gosta de comer?",
+            "Qual musculo fica dentro da boca que é responsvel pelo paladar?",
+            "Para finalizar digite a palavra amor em Inglês",
             
             
         ];
@@ -222,7 +220,10 @@
             "frozen",
             "fortaleza",
             "coffee",
-            "amor",
+            "arlequina",
+            "pé",
+            "lingua",
+            "love",
             
         
         ];
@@ -232,10 +233,13 @@
             "Muito bem! seu Proximo presente está dentro de um item que você leva para a escola.",
             "Ótimo! vais encontrar algo que gosta aqui mesmo na sala",
             "Isso mesmo! vá até o quarto da Gabriella e procure um presente!",
-            "Perfeito! tem algo que você vai amar no seu quarto, mas procure com calma!",
+            "Perfeito! tem algo que você vai amar no seu querto, mas procure com calma!",
             "Correto! procure algo no quarto de seus pais!",
-            "Isso mesmo, agora temos algo que vai amar, porém tenho só mais uma questão...",
-            "Desejamos um Feliz aniversario e que Deus te abençoe abudantemente, nunca esqeça de agradecer por tudo qe nos é proporcionado, que nossa familia permaneça unida no amor de Deus! espero que tenha Gostado da brincadeira. NÓS TE AMAMOS" ,
+            "Isso mesmo, aqui na mesa tem algo que vai amar",
+            "Certissima, abaixo da mesa encontrá uma surpresa.",
+            "Acertou novamente, atras do sofá tem outra surpresa",
+            "Mais um acerto, tenho mais um asrpresa pra você.",
+            "Desejamos um Feliz aniversario e que Deus te abençoe abudantemente, nunca esqeça de agradecer por tudo qe nos é proporcionado, que nossa familia permaneça unida no amor de Deus! espero que tenha Gostado da brincadeira. NÓS TE AMAMOS",
             
             ];
 
@@ -256,7 +260,7 @@ function verificarResposta() {
         if (indiceAtual < perguntas.length) {
             document.getElementById('pergunta').innerText = perguntas[indiceAtual];
         } else {
-            document.getElementById('pergunta').innerText = "Parabéns! Você encontrou todos os presentes!";
+            document.getElementById('pergunta').innerText = "Parabéns! Você encontrou todos os presentes! vamos aproveitar seu dia";
         }
     } else {
         document.getElementById('mensagem').innerText = "Tente novamente!";
